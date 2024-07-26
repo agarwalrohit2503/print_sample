@@ -45,10 +45,11 @@ class InvoiceBuilder extends StatelessWidget {
 
       if (invoice!.imageLogo!.isNotEmpty) {
         final bytes = const Base64Decoder().convert(invoice!.imageLogo!);
-        imageHeader = Image.memory(
-          bytes,
-          fit: BoxFit.scaleDown,
+        imageHeader = Image.asset(
+          "assets/girdhari_logo.png",
+          fit: BoxFit.contain,
           alignment: Alignment.bottomCenter,
+          height: 50,
         );
       }
 
@@ -108,17 +109,17 @@ class InvoiceBuilder extends StatelessWidget {
                 fontSize: fontSize,
                 screenWidth: screenWidth),
             InvoiceWidget.buildItems(
-                title: 'Transaction ID',
-                value: invoice!.trxID!,
+                title: 'Order ID',
+                value: invoice!.orderId!,
                 reducedWidth: reducedSize,
                 fontSize: fontSize,
                 screenWidth: screenWidth),
-            InvoiceWidget.buildItems(
-                title: 'Cashier Name',
-                value: invoice!.cashierName!,
-                reducedWidth: reducedSize,
-                fontSize: fontSize,
-                screenWidth: screenWidth),
+            // InvoiceWidget.buildItems(
+            //     title: 'Cashier Name',
+            //     value: invoice!.cashierName!,
+            //     reducedWidth: reducedSize,
+            //     fontSize: fontSize,
+            //     screenWidth: screenWidth),
             InvoiceWidget.buildDottedLine(
                 reducedWidth: reducedSize, screenWidth: screenWidth),
 
@@ -169,12 +170,12 @@ class InvoiceBuilder extends StatelessWidget {
                 reducedWidth: reducedSize,
                 fontSize: 20,
                 screenWidth: screenWidth),
-            InvoiceWidget.buildItems(
-                title: 'Total Tax',
-                value: invoice!.taxTotal!,
-                reducedWidth: reducedSize,
-                fontSize: 20,
-                screenWidth: screenWidth),
+            // InvoiceWidget.buildItems(
+            //     title: 'Total Tax',
+            //     value: invoice!.taxTotal!,
+            //     reducedWidth: reducedSize,
+            //     fontSize: 20,
+            //     screenWidth: screenWidth),
 
             InvoiceWidget.buildDottedLine(
                 reducedWidth: reducedSize, screenWidth: screenWidth),
@@ -185,41 +186,41 @@ class InvoiceBuilder extends StatelessWidget {
                 fontSize: 20,
                 isBold: true,
                 screenWidth: screenWidth),
-            InvoiceWidget.buildDottedLine(
-                reducedWidth: reducedSize, screenWidth: screenWidth),
-            InvoiceWidget.buildItems(
-                title: 'Pay amount',
-                value: invoice!.payAmount!,
-                reducedWidth: reducedSize,
-                fontSize: fontSize,
-                screenWidth: screenWidth),
-            InvoiceWidget.buildItems(
-                title: 'Payment type',
-                value: invoice!.paymentType!,
-                reducedWidth: reducedSize,
-                fontSize: fontSize,
-                screenWidth: screenWidth),
-            InvoiceWidget.buildItems(
-                title: 'Change',
-                value: invoice!.change!,
-                reducedWidth: reducedSize,
-                fontSize: fontSize,
-                screenWidth: screenWidth),
+            // InvoiceWidget.buildDottedLine(
+            //     reducedWidth: reducedSize, screenWidth: screenWidth),
+            // InvoiceWidget.buildItems(
+            //     title: 'Pay amount',
+            //     value: invoice!.payAmount!,
+            //     reducedWidth: reducedSize,
+            //     fontSize: fontSize,
+            //     screenWidth: screenWidth),
+            // InvoiceWidget.buildItems(
+            //     title: 'Payment type',
+            //     value: invoice!.paymentType!,
+            //     reducedWidth: reducedSize,
+            //     fontSize: fontSize,
+            //     screenWidth: screenWidth),
+            // InvoiceWidget.buildItems(
+            //     title: 'Change',
+            //     value: invoice!.change!,
+            //     reducedWidth: reducedSize,
+            //     fontSize: fontSize,
+            //     screenWidth: screenWidth),
           ],
 
           /// ********************************* invoice footer ******************************** ///
           InvoiceWidget.buildDottedLine(
               reducedWidth: reducedSize, screenWidth: screenWidth),
-          InvoiceWidget.buildItems(
-              title: 'Closed Bill',
-              value: '',
-              fontSize: 20,
-              centerPos: true,
-              screenWidth: screenWidth),
-          InvoiceWidget.buildDottedLineWithCurrentDateTime(
-              reducedWidth: reducedSize,
-              fontSize: 18,
-              screenWidth: screenWidth),
+          // InvoiceWidget.buildItems(
+          //     title: 'Closed Bill',
+          //     value: '',
+          //     fontSize: 20,
+          //     centerPos: true,
+          //     screenWidth: screenWidth),
+          // InvoiceWidget.buildDottedLineWithCurrentDateTime(
+          //     reducedWidth: reducedSize,
+          //     fontSize: 18,
+          //     screenWidth: screenWidth),
           InvoiceWidget.buildItems(
               title: invoice!.footer1!,
               value: '',

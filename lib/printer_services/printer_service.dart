@@ -212,7 +212,7 @@ class PrinterService {
     if (imageData == null) return;
 
     List<int> bytes = [];
-    final generator = Generator(PaperSize.mm58, await CapabilityProfile.load());
+    final generator = Generator(PaperSize.mm80, await CapabilityProfile.load());
     final image = decodePng(imageData)!;
 
     /// failed to show image in print result if using generator.image
