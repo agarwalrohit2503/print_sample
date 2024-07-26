@@ -221,7 +221,12 @@ class PrinterService {
     // align: PosAlign.center
     // );
 
-    bytes += generator.imageRaster(image);
+    bytes += generator.imageRaster(
+      image,
+      highDensityHorizontal: true,
+      highDensityVertical: true,
+      imageFn: PosImageFn.bitImageRaster,
+    );
     bytes += generator.cut();
 
     await _print(data: bytes);

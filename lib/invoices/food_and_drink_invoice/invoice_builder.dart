@@ -35,10 +35,9 @@ class InvoiceBuilder extends StatelessWidget {
   }
 
   Widget buildInvoice() {
-    final reducedSize = customWidth ? 55 : 0;
+    final reducedSize = customWidth ? 0 : 0;
 
-    /// dikurangi sebanyak-n supaya karakter paling kanan tidak terputus .nilai ini bisa saja berbeda, silahkan uji coba sampai dapat nilai yang pas (atur semakin tinggi jika teks paling kanan terpotong). dan pastikan posisi kertas terpasang rata
-    double? fontSize = printInvoice ? 18 : 16;
+    double? fontSize = printInvoice ? 20 : 20;
 
     if (invoice != null) {
       Widget? imageHeader;
@@ -49,7 +48,7 @@ class InvoiceBuilder extends StatelessWidget {
           "assets/girdhari_logo.png",
           fit: BoxFit.contain,
           alignment: Alignment.bottomCenter,
-          height: 50,
+          height: 10,
         );
       }
 
@@ -63,35 +62,40 @@ class InvoiceBuilder extends StatelessWidget {
               // border: Border.all(color: Colors.red)
               // ),
               padding: const EdgeInsets.only(bottom: 10),
-              height: 160,
-              width: 160,
+              height: 90,
+              width: 180,
               child: imageHeader),
 
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.header1!,
               value: '',
               fontSize: fontSize,
               centerPos: true,
               screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.header2!,
               value: '',
               fontSize: fontSize,
               centerPos: true,
               screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.header3!,
               value: '',
               fontSize: fontSize,
               centerPos: true,
               screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.header4!,
               value: '',
               fontSize: fontSize,
               centerPos: true,
               screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.header5!,
               value: '',
               fontSize: fontSize,
@@ -103,12 +107,14 @@ class InvoiceBuilder extends StatelessWidget {
           /// ********************************* invoice items ******************************** ///
           if (invoice!.items!.isNotEmpty) ...[
             InvoiceWidget.buildItems(
+                isBold: true,
                 title: 'Date',
                 value: invoice!.trxDate!,
                 reducedWidth: reducedSize,
                 fontSize: fontSize,
                 screenWidth: screenWidth),
             InvoiceWidget.buildItems(
+                isBold: true,
                 title: 'Order ID',
                 value: invoice!.orderId!,
                 reducedWidth: reducedSize,
@@ -135,6 +141,7 @@ class InvoiceBuilder extends StatelessWidget {
                 child: Column(
                   children: [
                     InvoiceWidget.buildItems(
+                        isBold: true,
                         title: '$itemNo.${e.itemName} x${e.qty}',
                         value: e.itemPrice,
                         reducedWidth: reducedSize,
@@ -143,6 +150,7 @@ class InvoiceBuilder extends StatelessWidget {
                     e.discountName == ''
                         ? const SizedBox()
                         : InvoiceWidget.buildItems(
+                            isBold: true,
                             title: '      ${e.discountName}',
                             value: e.discountAmount,
                             reducedWidth: reducedSize,
@@ -159,12 +167,14 @@ class InvoiceBuilder extends StatelessWidget {
             /// ************************ end of part nama item, quantity, price, tax ************************** ///
 
             InvoiceWidget.buildItems(
+                isBold: true,
                 title: 'SubTotal',
                 value: invoice!.subTotal!,
                 reducedWidth: reducedSize,
                 fontSize: 20,
                 screenWidth: screenWidth),
             InvoiceWidget.buildItems(
+                isBold: true,
                 title: 'Total Discount',
                 value: invoice!.discountTotal!,
                 reducedWidth: reducedSize,
@@ -180,11 +190,11 @@ class InvoiceBuilder extends StatelessWidget {
             InvoiceWidget.buildDottedLine(
                 reducedWidth: reducedSize, screenWidth: screenWidth),
             InvoiceWidget.buildItems(
+                isBold: true,
                 title: 'Total',
                 value: invoice!.total!,
                 reducedWidth: reducedSize,
                 fontSize: 20,
-                isBold: true,
                 screenWidth: screenWidth),
             // InvoiceWidget.buildDottedLine(
             //     reducedWidth: reducedSize, screenWidth: screenWidth),
@@ -222,12 +232,14 @@ class InvoiceBuilder extends StatelessWidget {
           //     fontSize: 18,
           //     screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.footer1!,
               value: '',
               fontSize: fontSize,
               centerPos: true,
               screenWidth: screenWidth),
           InvoiceWidget.buildItems(
+              isBold: true,
               title: invoice!.footer2!,
               value: '',
               fontSize: fontSize,

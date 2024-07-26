@@ -12,7 +12,7 @@ class InvoiceData {
       "headerData": {
         "header1": "Girdhari - One Stop Brand for Puja Samagri",
         "header2": "Shree Shyam Enterprises",
-        "header3": "20/1 Sailo Kumar Mukherjee Road, Howrah - 711101",
+        "header3": "20/1 Sailo Kumar Mukherjee Road, Howrah",
         "header4": "Contact Number : +91-9432278760",
         "header5": "Website: girdharishop.com"
       },
@@ -27,6 +27,28 @@ class InvoiceData {
             "discountName": "",
             "discountAmount": "0",
           },
+          {
+            "itemName": "Roli / Kumkum Powder",
+            "itemPrice": "₹ 132",
+            "qty": "12",
+            "discountName": "",
+            "discountAmount": "0",
+          },
+          {
+            "itemName": "Roli / Kumkum Powder",
+            "itemPrice": "₹ 132",
+            "qty": "12",
+            "discountName": "",
+            "discountAmount": "0",
+          },
+          {
+            "itemName": "Roli / Kumkum Powder",
+            "itemPrice": "₹ 132",
+            "qty": "12",
+            "discountName": "",
+            "discountAmount": "0",
+          },
+
           // {
           //   "itemName": "Salad",
           //   "itemPrice": "15.000",
